@@ -26,14 +26,14 @@ public class ReportingObjectGroupModuleActivator extends BaseModuleActivator {
 	protected Log log = LogFactory.getLog(ReportingObjectGroupModuleActivator.class);
 
 	/**
-	 * @see org.openmrs.module.Activator#startup()
+	 * @see BaseModuleActivator#started()
 	 */
 	public void started() {
 		log.info("Reporting Object Groups module started");
 	}
 	
 	/**
-	 *  @see org.openmrs.module.Activator#shutdown()
+	 *  @see BaseModuleActivator#stopped() 
 	 */
 	public void stopped() {
 		log.info("Reporting Object Groups module stopped");
