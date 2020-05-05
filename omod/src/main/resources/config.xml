@@ -18,6 +18,10 @@
 		<require_module version="0.7.1">org.openmrs.module.reporting</require_module>
 	</require_modules>
 
+	<aware_of_modules>
+		<aware_of_module>org.openmrs.module.legacyui</aware_of_module>
+	</aware_of_modules>
+
 	<messages>
 		<lang>en</lang>
 		<file>messages.properties</file>

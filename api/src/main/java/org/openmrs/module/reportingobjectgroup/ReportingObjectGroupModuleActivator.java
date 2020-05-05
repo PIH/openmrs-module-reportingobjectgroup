@@ -15,28 +15,28 @@ package org.openmrs.module.reportingobjectgroup;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openmrs.module.Activator;
+import org.openmrs.module.BaseModuleActivator;
 
 /**
  * This class contains the logic that is run every time this module
  * is either started or shutdown
  */
-public class ReportingObjectGroupModuleActivator implements Activator {
+public class ReportingObjectGroupModuleActivator extends BaseModuleActivator {
 
-	private static Log log = LogFactory.getLog(ReportingObjectGroupModuleActivator.class);
+	protected Log log = LogFactory.getLog(ReportingObjectGroupModuleActivator.class);
 
 	/**
 	 * @see org.openmrs.module.Activator#startup()
 	 */
-	public void startup() {
-		log.info("Starting Reporting Object Groups module");
+	public void started() {
+		log.info("Reporting Object Groups module started");
 	}
 	
 	/**
 	 *  @see org.openmrs.module.Activator#shutdown()
 	 */
-	public void shutdown() {
-		log.info("Stopping Reporting Object Groups module");
+	public void stopped() {
+		log.info("Reporting Object Groups module stopped");
 	}
 	
 }

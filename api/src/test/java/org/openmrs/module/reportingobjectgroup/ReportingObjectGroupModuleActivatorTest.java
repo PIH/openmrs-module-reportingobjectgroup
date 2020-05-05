@@ -23,12 +23,12 @@ public class ReportingObjectGroupModuleActivatorTest {
 	@Test
 	public void testStartup() {
 		ReportingObjectGroupModuleActivator activator = new ReportingObjectGroupModuleActivator();
-		activator.startup();
+		activator.started();
 	}
 
 	@Test
 	public void testShutdown() {
 		ReportingObjectGroupModuleActivator activator = new ReportingObjectGroupModuleActivator();
-		activator.shutdown();
+		activator.stopped();
 	}
 }
