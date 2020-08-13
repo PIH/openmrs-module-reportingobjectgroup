@@ -13,6 +13,7 @@ import org.openmrs.Cohort;
 import org.openmrs.Location;
 import org.openmrs.annotation.Handler;
 import org.openmrs.api.context.Context;
+import org.openmrs.module.reporting.cohort.Cohorts;
 import org.openmrs.module.reporting.common.ObjectUtil;
 import org.openmrs.module.reporting.dataset.DataSetColumn;
 import org.openmrs.module.reporting.dataset.MapDataSet;
@@ -142,7 +143,7 @@ public class RollingDailyIndicatorDataSetEvaluator implements DataSetEvaluator {
 		
 		context = ObjectUtil.nvl(context, new EvaluationContext());
 		if (context.getBaseCohort() == null) {
-			context.setBaseCohort(Context.getPatientSetService().getAllPatients());
+			context.setBaseCohort(Cohorts.allPatients());
 		}
 		
 		IndicatorService is = Context.getService(IndicatorService.class);

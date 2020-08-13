@@ -26,23 +26,14 @@ public class RollingDailyCalendarWebReportRenderer extends AbstractWebReportRend
 	    return false;
     }
 
-	/**
-     * @see org.openmrs.report.ReportRenderer#getLabel()
-     */
     public String getLabel() {
     	return "Web Indicator Renderer";
     }
 
-	/**
-	 * @see org.openmrs.report.ReportRenderer#getLinkUrl(org.openmrs.report.ReportDefinition)
-	 */
 	public String getLinkUrl(ReportDefinition reportDefinition) {
 		return "module/reporting/reports/renderDefaultReport.form";
 	}
-		
-	/**
-	 * @see org.openmrs.report.ReportRenderer#getRenderingModes(org.openmrs.report.ReportDefinition)
-	 */
+
 	public Collection<RenderingMode> getRenderingModes(ReportDefinition schema) {
 		return Collections.singleton(new RenderingMode(this, this.getLabel(), null, Integer.MAX_VALUE - 10));
 	}

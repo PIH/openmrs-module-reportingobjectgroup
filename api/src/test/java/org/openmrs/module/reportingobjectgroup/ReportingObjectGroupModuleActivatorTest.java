@@ -14,11 +14,12 @@
 package org.openmrs.module.reportingobjectgroup;
 
 import org.junit.Test;
+import org.openmrs.test.BaseModuleContextSensitiveTest;
 
 /**
- * Initial test
+ * Test of activation and context setup
  */
-public class ReportingObjectGroupModuleActivatorTest {
+public class ReportingObjectGroupModuleActivatorTest extends BaseModuleContextSensitiveTest {
 
 	@Test
 	public void testStartup() {

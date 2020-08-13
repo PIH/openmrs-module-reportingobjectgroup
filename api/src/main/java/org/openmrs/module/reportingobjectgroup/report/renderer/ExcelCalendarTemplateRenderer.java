@@ -25,6 +25,8 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.CellRangeAddress;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.openmrs.annotation.Handler;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.reporting.dataset.DataSet;
@@ -78,7 +80,7 @@ public class ExcelCalendarTemplateRenderer extends ExcelTemplateRenderer {
 		try {
 			log.debug("Attempting to render report with ExcelTemplateRenderer");
 			ReportDesign design = getDesign(argument);
-			HSSFWorkbook wb = this.getExcelTemplate(design);
+			HSSFWorkbook wb = (HSSFWorkbook)this.getExcelTemplate(design);
 			Map<String, String> repeatSections = this.getRepeatingSections(design);
 
 			// Put together base set of replacements.  Any dataSet with only one row is included.
@@ -145,7 +147,7 @@ public class ExcelCalendarTemplateRenderer extends ExcelTemplateRenderer {
 			if (startDate.getTime() >= endDate.getTime())
 				throw new IllegalArgumentException("start date must be before end date!");
 			
-			HSSFCell calStartCell = getCellWithCalendarInsert(sheet);
+			Cell calStartCell = getCellWithCalendarInsert(sheet);
 			//these are 0-based indexes
 			if (calStartCell == null)
 					return;
@@ -236,11 +238,11 @@ public class ExcelCalendarTemplateRenderer extends ExcelTemplateRenderer {
 		}
 	}
 	
-	private static HSSFCell getCellWithCalendarInsert(HSSFSheet sheet){
-		for (Iterator<HSSFRow> rit = sheet.rowIterator(); rit.hasNext(); ) {
-			HSSFRow row = rit.next();
-			for (Iterator<HSSFCell> cit = row.cellIterator(); cit.hasNext(); ) {
-				HSSFCell cell = cit.next();
+	private static Cell getCellWithCalendarInsert(HSSFSheet sheet){
+		for (Iterator<Row> rit = sheet.rowIterator(); rit.hasNext(); ) {
+			Row row = rit.next();
+			for (Iterator<Cell> cit = row.cellIterator(); cit.hasNext(); ) {
+				Cell cell = cit.next();
 				if (cell.getCellType() == HSSFCell.CELL_TYPE_STRING && cell.getRichStringCellValue().getString().equals(DRAW_CALENDAR_HERE)){
 					return cell;	
 				}

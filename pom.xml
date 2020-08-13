@@ -16,54 +16,19 @@
 	</modules>
 
 	<properties>
-		<openMRSVersion>1.9.1</openMRSVersion>
-		<reportingVersion>0.7.6</reportingVersion>
-		<htmlwidgetsVersion>1.6.4</htmlwidgetsVersion>
-		<serializationVersion>0.2.7</serializationVersion>
-		<calculationVersion>1.0</calculationVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<MODULE_ID>${project.parent.artifactId}</MODULE_ID>
-		<MODULE_NAME>Reporting Object Group</MODULE_NAME>
-		<MODULE_VERSION>${project.parent.version}</MODULE_VERSION>
-		<MODULE_PACKAGE>${project.parent.groupId}.${project.parent.artifactId}</MODULE_PACKAGE>
+		<openMRSVersion>2.3.2-SNAPSHOT</openMRSVersion>
+		<calculationVersion>1.2</calculationVersion>
+		<htmlwidgetsVersion>1.10.0</htmlwidgetsVersion>
+		<reportingVersion>1.20.0</reportingVersion>
+		<serializationVersion>0.2.14</serializationVersion>
+		<MODULE_NAME>${project.name}</MODULE_NAME>
+		<MODULE_PACKAGE>${project.groupId}</MODULE_PACKAGE>
+		<MODULE_ID>${project.artifactId}</MODULE_ID>
+		<MODULE_VERSION>${project.version}</MODULE_VERSION>
 	</properties>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>org.openmrs.api</groupId>
-			<artifactId>openmrs-api</artifactId>
-			<version>${openMRSVersion}</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.openmrs.api</groupId>
-			<artifactId>openmrs-api</artifactId>
-			<version>${openMRSVersion}</version>
-			<type>jar</type>
-			<scope>test</scope>
-			<classifier>tests</classifier>
-		</dependency>
-
-		<dependency>
-			<groupId>org.openmrs.web</groupId>
-			<artifactId>openmrs-web</artifactId>
-			<version>${openMRSVersion}</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.openmrs.web</groupId>
-			<artifactId>openmrs-web</artifactId>
-			<version>${openMRSVersion}</version>
-			<type>jar</type>
-			<scope>test</scope>
-			<classifier>tests</classifier>
-		</dependency>
-
 		<dependency>
 			<groupId>org.openmrs.test</groupId>
 			<artifactId>openmrs-test</artifactId>
@@ -71,7 +36,19 @@
 			<type>pom</type>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.openmrs.api</groupId>
+			<artifactId>openmrs-api</artifactId>
+			<version>${openMRSVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.openmrs.api</groupId>
+			<artifactId>openmrs-api</artifactId>
+			<version>${openMRSVersion}</version>
+			<classifier>tests</classifier>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>reporting-api</artifactId>
@@ -79,44 +56,37 @@
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
-			<artifactId>reporting-omod</artifactId>
+			<artifactId>reporting-api-2.0</artifactId>
 			<version>${reportingVersion}</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>htmlwidgets-api</artifactId>
-			<version>${htmlwidgetsVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>htmlwidgets-omod</artifactId>
-			<version>${htmlwidgetsVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>serialization.xstream-api</artifactId>
 			<version>${serializationVersion}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>serialization.xstream-api-2.0</artifactId>
+			<version>${serializationVersion}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>calculation-api</artifactId>
 			<version>${calculationVersion}</version>
-			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

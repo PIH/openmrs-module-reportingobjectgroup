@@ -45,7 +45,7 @@ public class ObjectGroupDefinitionServiceImpl extends BaseDefinitionService<Obje
 	}
 
 	/**
-	 * @see DefinitionService#getDefinitionTypes()z
+	 * @see DefinitionService#getDefinitionTypes()
 	 */
 	@SuppressWarnings("unchecked")
 	public List<Class<? extends ObjectGroupDefinition>> getDefinitionTypes() {
@@ -174,7 +174,7 @@ public class ObjectGroupDefinitionServiceImpl extends BaseDefinitionService<Obje
 			if (caching != null && caching.strategy() != NoCachingStrategy.class) {
 				try {
 					CachingStrategy strategy = caching.strategy().newInstance();
-					String cacheKey = strategy.getCacheKey(clonedDefinition);
+					String cacheKey = strategy.getCacheKey(clonedDefinition, context);
 					if (cacheKey != null) {
 						c = (ObjectGroup) context.getFromCache(cacheKey);
 					}
