@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.openmrs.Cohort;
 import org.openmrs.annotation.Handler;
 import org.openmrs.api.context.Context;
+import org.openmrs.module.reporting.cohort.CohortUtil;
 import org.openmrs.module.reporting.evaluation.EvaluationContext;
 import org.openmrs.module.reporting.evaluation.EvaluationException;
 import org.openmrs.module.reporting.indicator.Indicator;
@@ -80,7 +81,7 @@ public class ObjectGroupIndicatorEvaluator implements IndicatorEvaluator {
 						baseCohort = locationObjectGroup.getCohort();
 					}
 					else {
-						baseCohort = Cohort.intersect(baseCohort, locationObjectGroup.getCohort());
+						baseCohort = CohortUtil.intersect(baseCohort, locationObjectGroup.getCohort());
 					}
 				} catch (Exception ex) {
 					throw new EvaluationException("locationFilter", ex);

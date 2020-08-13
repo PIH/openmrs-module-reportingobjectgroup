@@ -1,6 +1,7 @@
 package org.openmrs.module.reportingobjectgroup.objectgroup.indicator;
 
 import org.openmrs.Cohort;
+import org.openmrs.module.reporting.cohort.CohortUtil;
 import org.openmrs.module.reporting.common.ObjectUtil;
 import org.openmrs.module.reporting.evaluation.EvaluationContext;
 import org.openmrs.module.reporting.indicator.CohortIndicatorResult;
@@ -51,7 +52,7 @@ public class IndicatorAndDimensionResult extends CohortIndicatorAndDimensionResu
 		if (this.getCohortIndicatorResult() != null){
 			Cohort ret = this.getCohortIndicatorResult().getCohort();
 			if (ret != null && !getDimensionResults().isEmpty()) {
-				ret = Cohort.intersect(ret, calculateDimensionCohort());
+				ret = CohortUtil.intersect(ret, calculateDimensionCohort());
 			}
 			return ret;
 		} else {
