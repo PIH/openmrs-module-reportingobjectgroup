@@ -281,9 +281,8 @@
 	</build>
 
 	<scm>
-		<connection>scm:git:git@github.com:PIH/openmrs-module-reportingobjectgroup.git</connection>
-		<developerConnection>scm:git:git@github.com:PIH/openmrs-module-reportingobjectgroup.git</developerConnection>
-		<url>https://github.com/PIH/openmrs-module-reportingobjectgroup/</url>
+		<developerConnection>scm:git:https://github.com/PIH/openmrs-module-reportingobjectgroup</developerConnection>
+		<url>https://github.com/PIH/openmrs-module-reportingobjectgroup</url>
 		<tag>HEAD</tag>
 	</scm>
 
