@@ -17,7 +17,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<openMRSVersion>2.3.2-SNAPSHOT</openMRSVersion>
+		<openMRSVersion>2.3.4</openMRSVersion>
 		<calculationVersion>1.2</calculationVersion>
 		<htmlwidgetsVersion>1.10.0</htmlwidgetsVersion>
 		<reportingVersion>1.20.0</reportingVersion>
@@ -281,8 +281,9 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:git:https://github.com/PIH/openmrs-module-reportingobjectgroup</developerConnection>
-		<url>https://github.com/PIH/openmrs-module-reportingobjectgroup</url>
+		<connection>scm:git:git@github.com:PIH/openmrs-module-reportingobjectgroup.git</connection>
+		<developerConnection>scm:git:git@github.com:PIH/openmrs-module-reportingobjectgroup.git</developerConnection>
+		<url>https://github.com/PIH/openmrs-module-reportingobjectgroup/</url>
 		<tag>HEAD</tag>
 	</scm>
 
