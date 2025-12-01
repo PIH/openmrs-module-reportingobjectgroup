@@ -18,7 +18,7 @@ jobs:
           distribution: 'temurin'
           java-version: 8
           cache: 'maven'
-          server-id: openmrs-repo-modules-pih
+          server-id: openmrs-repo-modules-pih-snapshots
           server-username: OPENMRS_MAVEN_USERNAME
           server-password: OPENMRS_MAVEN_PASSWORD
       - name: Maven Deploy
