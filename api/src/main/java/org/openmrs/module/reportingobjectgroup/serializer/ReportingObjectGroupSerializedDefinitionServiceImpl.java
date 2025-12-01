@@ -40,7 +40,7 @@ public class ReportingObjectGroupSerializedDefinitionServiceImpl extends BaseOpe
     //****************
     // Constructor
     //****************
-	private ReportingObjectGroupSerializedDefinitionServiceImpl() { }
+	public ReportingObjectGroupSerializedDefinitionServiceImpl() { }
 	
     //****************
     // Properties
